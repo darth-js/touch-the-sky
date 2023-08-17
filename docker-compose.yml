@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  video-management-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATABASE_PATH=/app/data/video_management.db
+      - JWT_KEY=88d6fdd8-7efe-4b88-96b0-fbe52232e108
